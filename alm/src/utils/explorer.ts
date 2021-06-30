@@ -104,7 +104,7 @@ export const getClosestBlockByTimestamp = async (api: string, timestamp: number)
 
   const blockNumber = await fetch(url.toString()).then(res => res.json())
 
-  return parseInt(blockNumber.result)
+  return parseInt(blockNumber.result) == blockNumber.result ? parseInt(blockNumber.result) : parseInt(blockNumber.result.blockNumber)
 }
 
 // fast version of fetchAccountTransactions
